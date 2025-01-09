@@ -16,6 +16,7 @@ import { User } from "@/lib/data"
 
 export const columns: ColumnDef<User>[] = [
   {
+    id: "name",
     accessorKey: "name",
     header: ({ column }) => {
         return (
@@ -30,14 +31,17 @@ export const columns: ColumnDef<User>[] = [
       },
   },
   {
+    id: "email",
     accessorKey: "email",
     header: "Email",
   },
   {
+    id: "role",
     accessorKey: "role",
     header: "Role",
   },
   {
+    id: "lastseen",
     accessorKey: "lastseen",
     header: "Last Seen",
     cell: ({row}) => {
