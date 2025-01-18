@@ -50,6 +50,7 @@ export const columns: ColumnDef<User>[] = [
         return <span className="font-medium italic text-blue-400">{formattedDate}</span>
     },
   },
+  
   {
     id: "actions",
     enableColumnFilter: false,
