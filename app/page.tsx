@@ -1,5 +1,5 @@
 import { columns } from "@/components/Users/columns";
-import { DataTable } from "@/components/Users/Data-table";
+import { DataTable } from "@/components/Data-table";
 import { users } from "@/lib/data";
 
 

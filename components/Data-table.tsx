@@ -60,7 +60,11 @@ export function DataTable<TData, TValue>({
       table.getColumn(filterColumn)?.setFilterValue(filterValue);
     }
   }, [filterColumn, filterValue, table]);
-
+  
+  // Filter out columns that have enableColumnFilter set to false
+  const filterableColumns = columns.filter(column => column.enableColumnFilter !== false);
+  
+  
   return (
     <>
       <div className="rounded-md border p-2">
@@ -74,11 +78,11 @@ export function DataTable<TData, TValue>({
             <option value="" disabled>
               Select Column to Filter
             </option>
-            {columns.map((column) => (
-              <option key={column.id} value={column.id}>
-                {typeof column.header === 'string' ? column.header : column.id}
-              </option>
-            ))}
+              {filterableColumns.map((column) => (
+                  <option key={column.id} value={column.id}>
+                    {typeof column.header === 'string' ? column.header : column.id}
+                  </option>
+              ))}
             </select>
 
           {/* Input for Filtering */}
